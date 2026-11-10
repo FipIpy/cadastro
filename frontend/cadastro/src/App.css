@@ -1,0 +1,51 @@
+input {
+  font-size: 16px;
+  /* border: 1px white solid; */
+  padding: 4px 10px;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:hover {
+  opacity: 0.8;
+}
+
+.inps-box {
+  border: 1px white solid;
+  border-radius: 4px;
+}
+.cursor-pointer:hover {
+  opacity: 0.8;
+}
+
+.icons {
+  padding: 4px 10px;
+}
+
+form {
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+/* 
+p {
+  text-shadow:
+    -1px -1px 0 red,
+    1px -1px 0 red,
+    -1px 1px 0 red,
+    1px 1px 0 red;
+} */
+
+main {
+  background-image: url("https://opengameart.org/sites/default/files/5_69.png");
+  /* background: #0077ff;
+  background: linear-gradient(
+    142deg,
+    rgba(0, 119, 255, 1) 20%,
+    rgba(0, 0, 0, 1) 100%
+  ); */
+}
