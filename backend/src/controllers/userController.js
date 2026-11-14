@@ -38,20 +38,20 @@ export const createUser = async (req, res) => {
   }
 };
 
-export const getAllUser = (req, res) => {
-  UsersDB.find({}, (err, users) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.status(200).json(users);
-  });
-};
+// export const getAllUser = (req, res) => {
+//   UsersDB.find({}, (err, users) => {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//     res.status(200).json(users);
+//   });
+// };
 
-export const editUser = (req, res) => {
-  const { id } = req.params;
-  const { name, email, password, teacher, admin } = req.body;
-};
+// export const editUser = (req, res) => {
+//   const { id } = req.params;
+//   const { name, email, password, teacher, admin } = req.body;
+// };
 
-export const deleteUser = (req, res) => {
-  const { id } = req.params;
-};
+// export const deleteUser = (req, res) => {
+//   const { id } = req.params;
+// };

@@ -10,16 +10,20 @@ app.use(cors());
 app.use("/database/users", userRoutes);
 
 async function main() {
-  await mongoose.connect(
-    "mongodb+srv://filipec953_db_user:fip@users.naukp7u.mongodb.net/",
+  const mongoUri = process.env.MONGODB_URI;
+
+  if (!mongoUri) {
+    throw new Error("A variável MONGODB_URI não foi definida.");
+  }
+
+  await mongoose.connect(mongoUri);
+
+  app.listen(PORT, () =>
+    console.log(`Server running on port: http://localhost:${PORT}`),
   );
 }
 
-// Connect to MongoDB
-main().catch((err) => console.log(err));
-
-app.listen(PORT, () =>
-  console.log(`Server running on port: http://localhost:${PORT}`),
-);
-
-// mongodb+srv://filipec953_db_user:p9XBkvomD0MbbJtF@users.naukp7u.mongodb.net/
+main().catch((err) => {
+  console.error("Erro ao iniciar o servidor:", err.message);
+  process.exitCode = 1;
+});
