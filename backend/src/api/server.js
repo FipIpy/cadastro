@@ -10,6 +10,7 @@ app.use(cors());
 app.use("/database/users", userRoutes);
 
 async function main() {
+  process.loadEnvFile(new URL("../../.env", import.meta.url));
   const mongoUri = process.env.MONGODB_URI;
 
   if (!mongoUri) {
