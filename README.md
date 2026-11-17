@@ -21,7 +21,13 @@ npm install
 npm install --prefix frontend/cadastro
 ```
 
-Configure a conexão com o MongoDB em `backend/src/api/server.js`. Mantenha credenciais fora dos arquivos versionados.
+Configure a conexão com o MongoDB em `backend/.env`:
+
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017/cadastro
+```
+
+O servidor carrega esse arquivo ao iniciar. Mantenha credenciais fora dos arquivos versionados.
 
 Em um terminal, inicie a API:
 
